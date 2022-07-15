@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS 2</title>
+    <!-- Bootstrap CSS v5.2.0-beta1 -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <!-- BT1: -->
+    <div class="d-flex justify-content-center">
+      <div class="card w-50">
+        <div class="card-header bg-dark text-white text-center fw-bold fs-2">
+          Tính lương nhân viên
+        </div>
+        <div class="card-body fs-5">
+          <div>
+            <p>1 ngày làm được trả 100,000 VND</p>
+          </div><hr>
+          <div class="form-group">
+            <p>Số ngày làm</p>
+            <input class="form-control" id="day" />
+          </div>
+        </div>
+        <div class="card-footer text-center">
+          <button class="btn btn-secondary fw-bold fs-4" id="btnTinhLuong">
+            Tính lương
+          </button>
+          <div class="mt-2" id="allLuong"></div>
+        </div>
+      </div>
+    </div>
+    <br />
+    <hr />
+    <br />
+    <!-- Test -->
+    <!-- <div class="d-flex justify-content-center">
+      <div class="card w-50">
+        <div class="card-header bg-dark text-white text-center">Movie</div>
+        <div class="card-body">
+          <div class="form-group">
+            <label>Tên phim</label>
+            <input class="form-control" id="tenPhim" />
+          </div>
+          <div class="form-group">
+            <label>Giá vé người lớn</label>
+            <input class="form-control" id="giaVeNL" />
+          </div>
+          <div class="form-group">
+            <label>Số lượng vé người lớn đã bán</label>
+            <input class="form-control" type="text" id="sLVeNL" />
+          </div>
+          <div class="form-group">
+            <label>Giá vé trẻ em</label>
+            <input class="form-control" id="giaVeTE" />
+          </div>
+          <div class="form-group">
+            <label>Số lượng vé trẻ em đã bán</label>
+            <input class="form-control" type="text" id="sLVeTE" />
+          </div>
+          <div class="form-group">
+            <label>Phần trăm từ thiện</label>
+            <select class="form-control" id="phanTram">
+              <option value="30">30%</option>
+              <option value="25">25%</option>
+              <option value="20">20%</option>
+              <option value="15">15%</option>
+              <option value="10">10%</option>
+              <option value="5">5%</option>
+            </select>
+          </div>
+          <button class="btn btn-secondary mt-2" id="btnSubmit">Submit</button>
+          </div>
+          <div class="card-footer text-center" id="thongBaoMovie"></div>
+        </div>
+    </div> -->
+
+    <!-- BT2: -->
+    <div class="d-flex justify-content-center">
+      <div class="card w-50">
+        <div class="card-header bg-dark text-white text-center fw-bold fs-2">
+          Tính giá trị trung bình
+        </div>
+        <div class="card-body fs-5">
+          <div class="form-group">
+            <p>Giá trị 1</p>
+            <input class="form-control" id="nB1" />
+          </div>
+          <div class="form-group">
+            <p>Giá trị 2</p>
+            <input class="form-control" id="nB2" />
+          </div>
+          <div class="form-group">
+            <p>Giá trị 3</p>
+            <input class="form-control" id="nB3" />
+          </div>
+          <div class="form-group">
+            <p>Giá trị 4</p>
+            <input class="form-control" id="nB4" />
+          </div>
+          <div class="form-group">
+            <p>Giá trị 5</p>
+            <input class="form-control" id="nB5" />
+          </div>
+        </div>
+        <div class="card-footer text-center">
+          <button class="btn btn-secondary fw-bold fs-4" id="btnTinhTB">
+            Tính trung bình
+          </button>
+          <div class="mt-2" id="giaTriTB"></div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <!-- BT3: -->
+    <div class="d-flex justify-content-center">
+      <div class="card w-50">
+        <div class="card-header bg-dark text-white text-center fw-bold fs-2">
+          Quy đổi USD
+        </div>
+        <div class="card-body fs-5">
+          <div>
+            <p>Tỉ lệ quy đổi 1USD = 23,500 VND</p>
+          </div><hr>
+          <div class="form-group">
+            <p>Số tiền cần quy đổi</p>
+            <input class="form-control" id="money" />
+          </div>
+        </div>
+        <div class="card-footer text-center">
+          <button class="btn btn-secondary fw-bold fs-4" id="btnTinhTien">
+            Quy Đổi
+          </button>
+          <div class="mt-2" id="total"></div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <!-- BT4: -->
+    <div class="d-flex justify-content-center">
+      <div class="card w-50">
+        <div class="card-header bg-dark text-white text-center  fw-bold fs-2">
+          Tính chu vi & diện tích hình chữ nhật
+        </div>
+        <div class="card-body fs-5">
+          <div class="form-group">
+            <p>Chiều rộng HCN</p>
+            <input class="form-control" id="height" />
+          </div>
+          <div class="form-group">
+            <p>Chiều dài HCN</p>
+            <input class="form-control" id="width" />
+          </div>
+        </div>
+        <div class="card-footer text-center">
+          <button class="btn btn-secondary fw-bold fs-4" id="btnTinhHCN">
+            Tính
+          </button>
+          <div class="mt-2" id="result"></div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <!-- BT5: -->
+    <div class="d-flex justify-content-center">
+      <div class="card w-50">
+        <div class="card-header bg-dark text-white text-center fw-bold fs-2">
+          Tính tổng ký số có 2 chữ số
+        </div>
+        <div class="card-body fs-5">
+          <div class="form-group">
+            <p>Số có 2 chữ số</p>
+            <input class="form-control" id="number" />
+          </div>
+        </div>
+        <div class="card-footer text-center">
+          <button class="btn btn-secondary fw-bold fs-4" id="btnTinhTong">
+            Tính
+          </button>
+          <div class="mt-2" id="sum"></div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
